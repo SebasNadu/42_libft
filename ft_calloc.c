@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcmp.c                                           :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 09:00:30 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/03 09:07:15 by johnavar         ###   ########.fr       */
+/*   Created: 2023/05/03 10:04:00 by johnavar          #+#    #+#             */
+/*   Updated: 2023/05/03 10:25:50 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	const unsigned char	*str1;
-	const unsigned char	*str2;
-	size_t				i;
+	size_t	len;
+	void	*p;
 
-	i = 0;
-	str1 = (const unsigned char *)s1;
-	str2 = (const unsigned char *)s2;
-	while (i < n)
+	if (count == 0 || size == 0)
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
+		count = 1;
+		size = 1;
 	}
-	return (0);
+	len = count * size;
+	p = malloc(len);
+	if (p == NULL)
+		return (NULL);
+	else
+	{
+		while (len > 0)
+		{
+			((unsigned char *)p)[len - 1] = 0;
+			len--;
+		}
+	}
+	return (p);
 }
