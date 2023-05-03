@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnavar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:52:27 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/02 12:57:18 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/03 22:29:05 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memset(void *str, int c, size_t n)
 	size_t	index;
 	char	*s;
 
-	s = str;
+	s = (char *)str;
 	index = -1;
 	while (++index < n)
 		s[index] = c;

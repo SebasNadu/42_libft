@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:46:58 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/03 11:09:01 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/03 22:59:22 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	s_len = 0;
-	while (s[s_len])
-		s_len++;
+	s_len = ft_strlen(s);
 	if (len > s_len - start)
 		len = s_len - start;
 	str = (char *)malloc(sizeof(char) * (len + 1));

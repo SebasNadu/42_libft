@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:26:27 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/03 16:14:41 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/03 22:54:06 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ size_t	*strlcpy(char *dest, const char *src, size_t dstsize)
 	size_t	len;
 
 	i = 0;
-	len = 0;
-	while (src[len])
-		len++;
+	len = ft_strlen(src);
 	if (dstsize > 0)
 	{
 		while (src[i] && (i < (dstsize - 1)))

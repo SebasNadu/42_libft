@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnavar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 12:44:27 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/02 13:36:25 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/03 22:08:06 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 void	bzero(void *s, size_t n)
 {
-	size_t	index;
-	char	*str;
-
-	str = s;
-	index = 0;
-	while (index < n)
-		str[index++] = '\0';
-	return ;
+	ft_memset(s, 0, n);
 }

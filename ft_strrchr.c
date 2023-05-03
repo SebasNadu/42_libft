@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 07:44:03 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/03 07:51:29 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/03 22:58:25 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
-	i = 0;
-	while (s[i])
-		i++;
+	i = ft_strlen(s);
 	if (c == 0)
 		return ((char *)s + i);
 	while (i >= 0)

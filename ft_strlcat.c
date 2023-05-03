@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 07:31:00 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/03 07:34:43 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/03 22:51:15 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	if (i < size)
 		dst[i + j] = '\0';
-	j = 0;
-	while (src[j])
-		j++;
-	return (i + j);
+	return (i + ft_strlen(src));
 }
