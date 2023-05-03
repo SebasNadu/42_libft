@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 08:39:14 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/03 16:15:53 by johnavar         ###   ########.fr       */
+/*   Created: 2023/05/02 17:14:46 by johnavar          #+#    #+#             */
+/*   Updated: 2023/05/02 18:15:41 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*str;
-	size_t	i;
+	char		*dest;
+	const char	*source;
 
-	if (s == NULL)
+	if (dst == NULL && src == NULL)
 		return (NULL);
-	i = 0;
-	str = (char *)s;
-	while (i < n)
+	if (dst == src)
+		return (dst);
+	dest = (char *)dst;
+	source = (char *)src;
+	if (dest > source)
 	{
-		if ((unsigned char)str[i] == (unsigned char)c)
-			return ((void *)s + i);
-		i++;
+		while (len--)
+			*(dest + len) = *(source + len);
+		return (dst);
 	}
-	return (NULL);
+	while (len--)
+		*dest++ = *source++;
+	return (dst);
 }

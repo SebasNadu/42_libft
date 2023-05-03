@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: johnavar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 08:39:14 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/03 16:15:53 by johnavar         ###   ########.fr       */
+/*   Created: 2023/05/02 11:52:27 by johnavar          #+#    #+#             */
+/*   Updated: 2023/05/02 12:57:18 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memset(void *str, int c, size_t n)
 {
-	char	*str;
-	size_t	i;
+	size_t	index;
+	char	*s;
 
-	if (s == NULL)
-		return (NULL);
-	i = 0;
-	str = (char *)s;
-	while (i < n)
-	{
-		if ((unsigned char)str[i] == (unsigned char)c)
-			return ((void *)s + i);
-		i++;
-	}
-	return (NULL);
+	s = str;
+	index = -1;
+	while (++index < n)
+		s[index] = c;
+	return (str);
 }

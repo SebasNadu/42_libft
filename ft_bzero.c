@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: johnavar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 08:39:14 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/03 16:15:53 by johnavar         ###   ########.fr       */
+/*   Created: 2023/05/02 12:44:27 by johnavar          #+#    #+#             */
+/*   Updated: 2023/05/02 13:36:25 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	bzero(void *s, size_t n)
 {
+	size_t	index;
 	char	*str;
-	size_t	i;
 
-	if (s == NULL)
-		return (NULL);
-	i = 0;
-	str = (char *)s;
-	while (i < n)
-	{
-		if ((unsigned char)str[i] == (unsigned char)c)
-			return ((void *)s + i);
-		i++;
-	}
-	return (NULL);
+	str = s;
+	index = 0;
+	while (index < n)
+		str[index++] = '\0';
+	return ;
 }

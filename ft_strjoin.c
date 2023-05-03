@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 08:39:14 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/03 16:15:53 by johnavar         ###   ########.fr       */
+/*   Created: 2023/05/03 15:34:27 by johnavar          #+#    #+#             */
+/*   Updated: 2023/05/03 16:39:36 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str;
+	size_t	len_s1;
+	size_t	len_s2;
+	size_t	len;
 	size_t	i;
+	char	*result;
 
-	if (s == NULL)
+	if (!s1 || !s2)
+		return (NULL);
+	len_s1 = 0;
+	while (s1[len_s1])
+		len_s1++;
+	len_s2 = 0;
+	while (s2[len_s2])
+		len_s2++;
+	len = len_s1 + len_s2;
+	result = malloc(sizeof(char) * (len + 1));
+	if (!result)
 		return (NULL);
 	i = 0;
-	str = (char *)s;
-	while (i < n)
-	{
-		if ((unsigned char)str[i] == (unsigned char)c)
-			return ((void *)s + i);
-		i++;
-	}
-	return (NULL);
+	while (*s1)
+		result[i++] = *(s1++);
+	while (*s2)
+		result[i++] = *(s2++);
+	result[i] = '\0';
+	return (result);
 }
