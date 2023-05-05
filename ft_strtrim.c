@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 09:08:06 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/04 12:29:51 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/05 08:37:23 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1 <= s1_end)
 		*new_str++ = *s1++;
 	*new_str = '\0';
-	return new_str_start;
+	return (new_str_start);
 }

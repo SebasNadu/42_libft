@@ -6,31 +6,74 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:15:24 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/04 14:22:32 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/05 10:20:42 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_words_count(char const *s, char c)
+static int	words_counter(const char *str, char c)
 {
-	int	i;
 	int	count;
+	int	in_word;
 
-	i = 1;
 	count = 0;
-	while (s[i])
+	in_word = 0;
+	while (*str)
 	{
-		if (s[i] == (const char)c && s[i + 1] != '\0')
+		if (*str == c)
+			in_word = 0;
+		else if (in_word == 0)
+		{
+			in_word = 1;
 			count++;
-		i++;
+		}
+		str++;
 	}
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static char	*worddup(const char *str, int start, int finish)
 {
-	char	**result;
+	char	*word;
+	size_t	len;
+	size_t	i;
 
-	result = (char **) malloc(sizeof(char *) * ft_words_count(s, c));
+	len = finish - start;
+	word = malloc((len + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
+	i = -1;
+	while (++i < len)
+		word[i] = str[start + i];
+	word[len] = '\0';
+	return (word);
+}
+
+char	**ft_split(char const *str, char c)
+{
+	size_t	i;
+	size_t	j;
+	int		index;
+	char	**strs;
+
+	strs = malloc((words_counter(str, c) + 1) * sizeof(char *));
+	if (!str || !strs)
+		return (0);
+	i = 0;
+	j = 0;
+	index = -1;
+	while (i <= ft_strlen(str))
+	{
+		if (str[i] != c && index < 0)
+			index = i;
+		else if ((str[i] == c || i == ft_strlen(str)) && index >= 0)
+		{
+			strs[j++] = worddup(str, index, i);
+			index = -1;
+		}
+		i++;
+	}
+	strs[j] = 0;
+	return (strs);
 }
