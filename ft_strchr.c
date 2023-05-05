@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 08:33:53 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/04 00:16:38 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/05 19:53:21 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 char	*ft_strchr(const char *s, int i)
 {
-	if (!s)
-		return (NULL);
 	while (*s)
 	{
 		if (*s == (char)i)

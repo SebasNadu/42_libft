@@ -6,7 +6,7 @@
 /*   By: johnavar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:06:29 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/02 17:09:44 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/05 19:27:24 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	index;
 
+	if (!dest && !src)
+		return (0);
 	index = -1;
 	while (++index < n)
-		((char *)dest)[index] = ((char *)src)[index];
+		((unsigned char *)dest)[index] = ((unsigned char *)src)[index];
 	return (dest);
 }

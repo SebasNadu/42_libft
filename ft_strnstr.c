@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 09:11:12 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/03 09:43:34 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/05 19:57:47 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *str, const char *substr, size_t n)
 
 	i = 0;
 	j = 0;
-	if (substr == NULL || substr[0] == '\0')
+	if (substr[0] == '\0')
 		return ((char *)str);
 	while (str[i] != '\0' && i < n)
 	{
