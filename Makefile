@@ -6,7 +6,7 @@
 #    By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 16:45:08 by johnavar          #+#    #+#              #
-#    Updated: 2023/05/06 13:17:54 by johnavar         ###   ########.fr        #
+#    Updated: 2023/05/06 13:23:59 by johnavar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strle
 		ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 SRCS_B	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-		ft_lstdelone.c ft_lstclear.c ft_lstiter.c
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 OBJS	= $(SRCS:.c=.o)
 OBJS_B	= $(SRCS_B:.c=.o)
 RM		= rm -f
