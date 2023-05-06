@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:04:00 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/06 14:02:57 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/06 14:10:43 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t	len;
 	void	*ptr;
 
-	if (count == 0 && size == 0)
-		return (NULL);
+	if (count == 0 || size == 0)
+	{
+		count = 1;
+		size = 1;
+	}
 	len = count * size;
 	ptr = malloc(len);
 	if (ptr == NULL)

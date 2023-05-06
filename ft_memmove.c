@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 17:14:46 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/05 19:45:17 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/06 18:24:05 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,19 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (dst);
 	dest = (char *)dst;
 	source = (char *)src;
-	if (dest > source)
+	if (dest >= source)
 	{
-		while (len--)
+		while (len)
+		{
+			len--;
 			*(dest + len) = *(source + len);
+		}
 		return (dst);
 	}
-	while (len--)
+	while (len)
+	{
 		*dest++ = *source++;
+		len--;
+	}
 	return (dst);
 }
