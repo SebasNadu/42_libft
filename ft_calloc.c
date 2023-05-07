@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:04:00 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/06 14:10:43 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/07 19:55:04 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,7 @@ void	*ft_calloc(size_t count, size_t size)
 	if (ptr == NULL)
 		return (NULL);
 	else
-	{
 		while (len > 0)
-		{
-			((unsigned char *)ptr)[len - 1] = 0;
-			len--;
-		}
-	}
+			((unsigned char *)ptr)[--len] = 0;
 	return (ptr);
 }

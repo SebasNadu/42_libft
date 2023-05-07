@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:46:58 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/04 09:01:39 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/07 21:26:39 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 		j++;
 	}
-	str[j] = 0;
+	str[j] = '\0';
 	return (str);
 }
