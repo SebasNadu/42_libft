@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 18:16:39 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/05 18:20:11 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:29:23 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ void	ft_putstr_fd(char *s, int fd)
 		ft_putchar_fd(*s, fd);
 		s++;
 	}
+	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:46:58 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/10 12:53:15 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/07 21:26:39 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,26 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	size_t	s_len;
+	size_t	j;
 	char	*str;
 
 	if (!s)
 		return (NULL);
-	s_len = ft_strlen(s);
-	if (start >= s_len)
+	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
-	if (len > s_len - start)
-		len = s_len - start;
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
 	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
+	if (str == 0)
 		return (NULL);
-	i = 0;
-	while (s[start + i] && i < len)
+	i = start;
+	j = 0;
+	while (s[i] && j < len)
 	{
-		str[i] = s[start + i];
+		str[j] = s[i];
 		i++;
+		j++;
 	}
-	str[i] = '\0';
+	str[j] = '\0';
 	return (str);
 }

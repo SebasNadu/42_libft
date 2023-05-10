@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 07:44:03 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/10 14:06:03 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/04 08:36:24 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*last_occurrence;
+	int		i;
+	char	*ss;
 
-	last_occurrence = NULL;
-	while (*s != '\0')
+	i = 0;
+	ss = 0;
+	while (s[i])
 	{
-		if (*s == (char)c)
-			last_occurrence = s;
-		s++;
+		if (s[i] == (const char)c)
+			ss = (char *)(s + i);
+		i++;
 	}
-	if (*s == (char)c)
-		last_occurrence = s;
-	return ((char *)last_occurrence);
+	if (s[i] == (const char)c)
+		ss = (char *)(s + i);
+	return (ss);
 }

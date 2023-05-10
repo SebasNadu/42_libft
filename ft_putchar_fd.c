@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/05 18:11:19 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/05 18:12:29 by johnavar         ###   ########.fr       */
+/*   Created: 2023/05/08 10:58:16 by johnavar          #+#    #+#             */
+/*   Updated: 2023/05/08 11:05:31 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,5 @@
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
+	return ;
 }
