@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 09:08:06 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/05 08:37:23 by johnavar         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:10:19 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char		*new_str_start;
 	const char	*s1_end;
 
+	if (!s1 || !set)
+		return (NULL);
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	s1_end = s1 + ft_strlen(s1) - 1;
