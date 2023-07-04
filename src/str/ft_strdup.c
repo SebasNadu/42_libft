@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:29:52 by johnavar          #+#    #+#             */
-/*   Updated: 2023/07/04 17:29:49 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2023/07/04 19:02:29 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 char	*ft_strdup(const char *s)
 {
 	int		i;
-	int		j;
 	char	*str;
 
-	i = 0;
-	j = ft_strlen(s);
-	str = (char *)malloc(sizeof(*str) * (j + 1));
+	i = ft_strlen(s);
+	str = (char *)malloc(sizeof(*str) * (i + 1));
 	if (!str)
 		return (NULL);
-	ft_memcpy(str, s, j + 1);
+	ft_memcpy(str, s, i + 1);
 	return (str);
 }
