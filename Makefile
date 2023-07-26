@@ -6,7 +6,7 @@
 #    By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 16:45:08 by johnavar          #+#    #+#              #
-#    Updated: 2023/07/24 15:43:32 by sebasnadu        ###   ########.fr        #
+#    Updated: 2023/07/26 23:48:28 by sebasnadu        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ NAME	= libft.a
 
 DIR_SRCS	= src
 DIR_OBJS	= obj
-SUBDIRS		= is to mem str put lst printf
+SUBDIRS		= is to mem str put lst printf gnl
 
 SRCS_DIRS	= $(foreach dir, $(SUBDIRS), $(DIR_SRCS)/$(dir))
 OBJS_DIRS	= $(foreach dir, $(SUBDIRS), $(DIR_OBJS)/$(dir))
@@ -42,9 +42,9 @@ PRINTF		= printf
 LIBC		= ar -rcs
 
 # Progress vars
-SRC_COUNT_TOT := $(shell expr $(shell echo -n $(SRCS) | wc -w) - $(shell ls -l $(OBJS) 2>&1 | grep ".o" | wc -l) + 1)
+SRC_COUNT_TOT := $(shell expr $(shell echo -n $(SRCS) | wc -w) - $(shell ls -l $(OBJS_DIRS) 2>&1 | grep ".o" | wc -l) + 1)
 ifeq ($(shell test $(SRC_COUNT_TOT) -lt 0; echo $$?),0)
-	SRC_COUNT_TOT := $(shell echo -n $(SRC) | wc -w)
+	SRC_COUNT_TOT := $(shell echo -n $(SRCS) | wc -w)
 endif
 SRC_COUNT := 0
 SRC_PCT = $(shell expr 100 \* $(SRC_COUNT) / $(SRC_COUNT_TOT))
