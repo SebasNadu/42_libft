@@ -6,7 +6,7 @@
 #    By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 16:45:08 by johnavar          #+#    #+#              #
-#    Updated: 2023/07/26 23:48:28 by sebasnadu        ###   ########.fr        #
+#    Updated: 2023/09/13 20:50:26 by sebasnadu        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,15 +36,15 @@ INCLUDES	= includes
 
 CC			= cc
 FLAGS		= -Wall -Wextra -Werror
-RM			= rm -f
+RM			= rm -rf
 PRINTF		= printf
 
 LIBC		= ar -rcs
 
 # Progress vars
-SRC_COUNT_TOT := $(shell expr $(shell echo -n $(SRCS) | wc -w) - $(shell ls -l $(OBJS_DIRS) 2>&1 | grep ".o" | wc -l) + 1)
-ifeq ($(shell test $(SRC_COUNT_TOT) -lt 0; echo $$?),0)
-	SRC_COUNT_TOT := $(shell echo -n $(SRCS) | wc -w)
+SRC_COUNT_TOT := $(shell expr $(shell echo -n $(SRCS) | wc -w) - $(shell ls -l $(OBJS) 2>&1 | grep ".o" | wc -l))
+ifeq ($(shell test $(SRC_COUNT_TOT) -lt 0; echo $$?),1)
+	SRC_COUNT_TOT := $(shell expr $(shell echo -n $(SRCS) | wc -w) - 1)
 endif
 SRC_COUNT := 0
 SRC_PCT = $(shell expr 100 \* $(SRC_COUNT) / $(SRC_COUNT_TOT))
@@ -64,8 +64,7 @@ $(NAME):	$(OBJS)
 
 clean:
 	@$(PRINTF) "$(CYAN)Cleaning up object files in libft...$(DEFAULT)\n"
-	@$(RM) $(OBJS)
-	@$(RM) -r $(DIR_OBJS)
+	@$(RM) $(DIR_OBJS)
 
 fclean:		clean
 	@$(RM) $(NAME)
