@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 23:02:00 by johnavar          #+#    #+#             */
-/*   Updated: 2023/07/04 18:01:56 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2023/11/21 12:32:40 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 // Headers
 # include <stdlib.h>
 # include <unistd.h>
+# include "get_next_line.h"
+# include "ft_printf.h"
 
 // Structs
 typedef struct s_list
@@ -82,5 +84,11 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// Matrix
+void	ft_matrixfree(char ***matrix);
+char	**ft_extend_matrix(char **matrix, char *str);
+char	**ft_matrixdup(char **tokens);
+int		ft_matrixlen(char **matrix);
 
 #endif
