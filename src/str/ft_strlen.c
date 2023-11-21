@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:46:33 by johnavar          #+#    #+#             */
-/*   Updated: 2023/07/04 17:34:08 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2023/11/21 15:41:56 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	index;
+	size_t	count;
 
-	index = 0;
-	while (s[index])
-		index++;
-	return (index);
+	count = 0;
+	if (s == NULL)
+		return (count);
+	while (*s != '\0')
+	{
+		count++;
+		s++;
+	}
+	return (count);
 }
