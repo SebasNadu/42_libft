@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 12:30:30 by sebasnadu         #+#    #+#             */
-/*   Updated: 2023/12/04 11:41:43 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2023/12/04 11:57:17 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	**ft_extend_matrix(char **matrix, char *str)
 	new[len + 1] = NULL;
 	while (++i < len)
 	{
-		new[i] = matrix[i];
+		new[i] = ft_strdup(matrix[i]);
 		if (!new[i])
 		{
 			ft_matrixfree(&matrix);
