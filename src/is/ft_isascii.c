@@ -6,13 +6,11 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:39:53 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/03 22:11:28 by johnavar         ###   ########.fr       */
+/*   Updated: 2024/02/04 23:06:37 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	return (!(c > 127));
 }

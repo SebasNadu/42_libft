@@ -6,13 +6,11 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:32:34 by johnavar          #+#    #+#             */
-/*   Updated: 2023/05/03 23:17:46 by johnavar         ###   ########.fr       */
+/*   Updated: 2024/02/04 23:03:56 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	return (c >= '0' && c <= '9');
 }

@@ -6,13 +6,11 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 16:49:58 by sebasnadu         #+#    #+#             */
-/*   Updated: 2023/07/04 16:50:05 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/04 23:13:00 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isupper(int c)
 {
-	if (c >= 65 && c <= 90)
-		return (1);
-	return (0);
+	return (c >= 65 && c <= 90);
 }
