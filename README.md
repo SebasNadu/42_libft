@@ -72,7 +72,7 @@ Mandatory from `<ctype.h>` | Mandatory from `<string.h>` | Mandatory from `<stdl
 
 ## Description
 
-#### [ft_isalpha](/src/is/ft_isalpha.c)
+## [ft_isalpha](/src/is/ft_isalpha.c)
 
 ```c
 int	ft_isalpha(int c);
