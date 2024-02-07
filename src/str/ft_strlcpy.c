@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:26:27 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/05 18:07:52 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/07 18:17:24 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 		while (src[i] && (i < (dstsize - 1)))
 		{
 			dest[i] = src[i];
-			i++;
+			++i;
 		}
 		dest[i] = '\0';
 	}
-	return (ft_strlen(src));
+	return (ft_strlen(src) + i);
 }

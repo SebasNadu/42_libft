@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 22:51:46 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/05 18:04:40 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/07 17:47:16 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*new_lst;
+	t_list	*node;
 
-	new_lst = (t_list *)malloc(sizeof(t_list));
-	if (!new_lst)
+	node = (t_list *)malloc(sizeof(t_list));
+	if (!node)
 		return (NULL);
-	new_lst->content = content;
-	new_lst->next = NULL;
-	return (new_lst);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

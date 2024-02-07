@@ -148,20 +148,83 @@ int	ft_isupper(int c);
     The function ft_isupper returns 1 if c is an uppercase letter, and 0 otherwise.
 
 ### [ft_lstadd_back](/src/lst/ft_lstadd_back.c)
+
 ```c
 void	ft_lstadd_back(t_list **lst, t_list *new)
 ```
-	The function ft_lstadd_back adds the new element to the end of the list(lst). The function recives as
-	parameters the address of a pointer to the first link of a list, and the address of a pointer
-	to the node node to be added to the list.
+
+    The function ft_lstadd_back adds the new element to the end of the list(lst). The function
+    recives as parameters the address of a pointer to the first link of a list, and the address of
+    a pointer to the node node to be added to the list.
 
 ### [ft_lstadd_front](/src/lst/ft_listadd_front)
+
 ```c
 void ft_lstadd_front(t_list **lst, t_list *new)
 ```
-	The funcion ft_lstadd_front adds the new element as the first element of the list(lst). The function recives
-	as parameter the address of a pointer to the first link of a list, and the adress of a pointer to the
-	node to be added to the list.
+
+    The funcion ft_lstadd_front adds the new element as the first element of the list(lst). The
+    function recives as parameter the address of a pointer to the first link of a list, and the
+    adress of a pointer to the node to be added to the list.
+
+### [ft_lstclear](/src/lst/ft_lstclear.c)
+
+```c
+void	ft_lstclear(t_list **lst, void (*del)(void*))
+```
+
+    The function ft_lstclear frees all the elements of the list(lst) and the list itself.
+
+### [ft_lstdelone](/src/lst/ft_lstdelone.c)
+
+```c
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
+```
+
+    The function ft_lstdelone frees the content of the node and the node itself.
+
+### [ft_lstiter](/src/lst/ft_lstiter.c)
+
+```c
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+```
+
+    The function ft_lstiter iterates the list(lst) and applies the function f to the content
+    of each element.
+
+### [ft_lstlast](/src/lst/ft_lstlast.c)
+
+```c
+t_list	*ft_lstlast(t_list *lst)
+```
+
+    The function ft_lstlast returns the last element of the list(lst).
+
+### [ft_lstmap](/src/lst/ft_lstmap.c)
+
+```c
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+```
+
+    The function ft_lstmap applies the function f to each element of the list(lst) and
+    returns a new list with the result.
+
+### [ft_lstnew](/src/lst/ft_lstnew.c)
+
+```c
+t_list	*ft_lstnew(void *content)
+```
+
+    The function ft_lstnew creates a new node and returns a pointer to it.
+
+### [ft_lstsize](/src/lst/ft_lstsize.c)
+
+```c
+int	ft_lstsize(t_list *lst)
+```
+
+    The function ft_lstsize returns the number of elements in the list(lst).
+
 ### [ft_bzero](/src/mem/ft_bzero.c)
 
 ```c
@@ -226,6 +289,182 @@ void	*ft_memset(void *b, int c, size_t len);
 
     The function ft_memset fills the first len bytes of the memory area pointed to by b with the
     constant byte c.
+
+### [ft_putchar?fd](/src/put/ft_putchar_fd.c)
+
+```c
+void	ft_putchar_fd(char c, int fd);
+```
+
+    The function ft_putchar_fd writes the character c to the given file descriptor fd.
+
+### [ft_putendl_fd](/src/put/ft_putendl_fd.c)
+
+```c
+void	ft_putendl_fd(char *s, int fd);
+```
+
+    The function ft_putendl_fd writes the string s to the given file descriptor fd followed by a
+    newline.
+
+### [ft_putnbr_fd](/src/put/ft_putnbr_fd.c)
+
+```c
+void	ft_putnbr_fd(int n, int fd);
+```
+
+    The function ft_putnbr_fd writes the integer n to the given file descriptor fd.
+
+### [ft_putstr_fd](/src/put/ft_putstr_fd.c)
+
+```c
+void	ft_putstr_fd(char *s, int fd);
+```
+
+    The function ft_putstr_fd writes the string s to the given file descriptor fd.
+
+### [ft_split](/src/str/ft_split.c)
+
+```c
+char	**ft_split(char const *s, char c);
+```
+
+    The function ft_split splits the string s into an array of strings separated by the character c.
+
+### [ft_strchr](/src/str/ft_strchr.c)
+
+```c
+char	*ft_strchr(const char *s, int c);
+```
+
+    The function ft_strchr searches for the first occurrence of the character c in the string s.
+
+### [ft_strdup](/src/str/ft_strdup.c)
+
+```c
+char	*ft_strdup(const char *s1);
+```
+
+    The function ft_strdup returns a pointer to a new string which is a duplicate of the string
+    s1.
+
+### [ft_striteri](/src/str/ft_striteri.c)
+
+```c
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+```
+
+    The function ft_striteri applies the function f to each character of the string s and its index.
+
+### [ft_strjoin](/src/str/ft_strjoin.c)
+
+```c
+char	*ft_strjoin(char const *s1, char const *s2);
+```
+
+    The function ft_strjoin concatenates the strings s1 and s2 and returns a pointer to a new
+    string.
+
+### [ft_strlcat](/src/str/ft_strlcat.c)
+
+```c
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+```
+
+    The function ft_strlcat concatenates the strings src and dst and returns the total length of the
+    resulting string.
+
+### [ft_strlcpy](/src/str/ft_strlcpy.c)
+
+```c
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+```
+
+    The function ft_strlcpy copies at most dstsize - 1 characters from the string src to the
+    buffer dst, NUL-terminating the result. The function returns the total length of the
+    result.
+
+### [ft_strlen](/src/str/ft_strlen.c)
+
+```c
+size_t	ft_strlen(const char *s);
+```
+
+    The function ft_strlen returns the length of the string s.
+
+### [ft_strmapi](/src/str/ft_strmapi.c)
+
+```c
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+```
+
+    The function ft_strmapi applies the function f to each character of the string s and returns a
+    new string.
+
+### [ft_strncmp](/src/str/ft_strncmp.c)
+
+```c
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+```
+
+    The function ft_strncmp compares the first n bytes of the strings s1 and s2.
+    0 if s1 == s2
+    < 0 if s1 < s2
+    > 0 if s1 > s2
+
+### [ft_strnstr](/src/str/ft_strnstr.c)
+
+```c
+char	*ft_strnstr(const char *str, const char *substr, size_t len);
+```
+
+    The function ft_strnstr searches for the first occurrence of the substring substr in the string
+    str, up to a maximum of len characters. It returns a pointer to the beginning of the
+    substring, or NULL if the substring is not found.
+
+### [ft_strrchr](/src/str/ft_strrchr.c)
+
+```c
+char	*ft_strrchr(const char *s, int c);
+```
+
+    The function ft_strrchr searches for the last occurrence of the character c in the string s.
+    It returns a pointer to the character, or NULL if the character is not found.
+
+### [ft_strtrim](/src/str/ft_strtrim.c)
+
+```c
+char	*ft_strtrim(char const *s, char const *set);
+```
+
+    The function ft_strtrim removes any leading or trailing characters from the string s that
+    are contained in the string set.
+
+### [ft_substr](/src/str/ft_substr.c)
+
+```c
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+```
+
+    The function ft_substr copies the substring of the string s from the character at position
+    start to the character at position start + len - 1.
+
+### [ft_atoi](/src/to/ft_atoi.c)
+
+```c
+int	ft_atoi(const char *str);
+```
+
+    The function ft_atoi converts the initial portion of the string pointed to by str to an integer
+    representation.
+
+### [ft_itoa](/src/to/ft_itoa.c)
+
+```c
+char	*ft_itoa(int n);
+```
+
+    The function ft_itoa converts the integer n to a string representation.
 
 ### [ft_toupper](/src/to/ft_toupper.c)
 
