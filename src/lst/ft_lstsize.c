@@ -6,11 +6,11 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 12:01:01 by johnavar          #+#    #+#             */
-/*   Updated: 2023/07/04 17:02:51 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/05 18:04:44 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../include/libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

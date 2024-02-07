@@ -6,11 +6,11 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 11:06:33 by sebasnadu         #+#    #+#             */
-/*   Updated: 2023/09/19 15:13:39 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/05 18:06:20 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_printf.h"
+#include "../../include/ft_printf.h"
 
 int	ft_print_c(int fd, char c)
 {

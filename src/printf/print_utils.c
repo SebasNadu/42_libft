@@ -6,11 +6,11 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:39:30 by sebasnadu         #+#    #+#             */
-/*   Updated: 2023/09/19 15:52:14 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/05 18:06:40 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_printf.h"
+#include "../../include/ft_printf.h"
 
 int	ft_print_pad(int fd, int width, int size, int zero)
 {

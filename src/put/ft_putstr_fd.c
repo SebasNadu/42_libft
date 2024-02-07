@@ -6,18 +6,18 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 18:16:39 by johnavar          #+#    #+#             */
-/*   Updated: 2023/07/04 17:22:22 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/05 18:07:07 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../include/libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-	{
-		ft_putchar_fd(*s, fd);
-		s++;
-	}
-	return ;
+	int	size;
+
+	size = -1;
+	while (s[++size])
+		;
+	write(fd, s, size);
 }

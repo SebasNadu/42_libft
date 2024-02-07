@@ -6,11 +6,11 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 12:30:30 by sebasnadu         #+#    #+#             */
-/*   Updated: 2023/12/04 11:57:17 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/05 18:05:46 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../include/libft.h"
 
 char	**ft_extend_matrix(char **matrix, char *str)
 {

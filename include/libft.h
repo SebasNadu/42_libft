@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 23:02:00 by johnavar          #+#    #+#             */
-/*   Updated: 2023/11/21 12:32:40 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/05 22:02:58 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 // Headers
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
 # include "get_next_line.h"
 # include "ft_printf.h"
 

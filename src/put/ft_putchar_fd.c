@@ -6,11 +6,11 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:58:16 by johnavar          #+#    #+#             */
-/*   Updated: 2023/07/04 17:19:03 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/05 18:06:49 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../include/libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

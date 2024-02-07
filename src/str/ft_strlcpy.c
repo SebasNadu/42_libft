@@ -6,11 +6,11 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:26:27 by johnavar          #+#    #+#             */
-/*   Updated: 2023/07/04 17:33:48 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/05 18:07:52 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../include/libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {

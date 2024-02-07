@@ -6,11 +6,11 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 07:37:00 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/04 22:29:19 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/05 18:09:01 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../include/libft.h"
 
 int	ft_toupper(int c)
 {

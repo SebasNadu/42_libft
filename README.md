@@ -49,7 +49,7 @@ cc -o my_program my_program.c -L. -lft
 
 `make re` - Remove the object files and the executable and recompile all.
 
-## Content Index
+## Index
 
 **NOTE:** After I finished the project, I organized the files in different directories to make it more clear. The content table does not represent the actual organization of the files.
 </br>
@@ -65,12 +65,12 @@ Mandatory from `<ctype.h>` | Mandatory from `<string.h>` | Mandatory from `<stdl
 | | [ft_strchr](#ft_strchr) | | [ft_putchar_fd](#ft_putchar_fd) | [ft_lstiter](#ft_lstiter) | [ft_matrixdup](#ft_matrixdup)
 | | [ft_strrchr](#ft_strrchr) | | [ft_putstr_fd](#ft_putstr_fd) | [ft_lstmap](#ft_lstmap) | [ft_matrixfree](#ft_matrixfree)
 | | [ft_strncmp](#ft_strncmp) | | [ft_putenl_fd](#ft_putendl_fd) | | [ft_matrixlen](#ft_matrixlen)
-| | [ft_memchr](#ft_memchr) | | [ft_putnbr_fd](#ft_putnbr_fd)
+| | [ft_memchr](#ft_memchr) | | [ft_putnbr_fd](#ft_putnbr_fd) | | [ft_memclear](#ft_memclear)
 | | [ft_memcmp](#ft_memcmp)
 | | [ft_strnstr](#ft_strnstr)
 | | [ft_strdup](#ft_strdup)
 
-## Description
+## Content
 
 ### [ft_isalpha](/src/is/ft_isalpha.c)
 

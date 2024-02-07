@@ -6,12 +6,12 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 22:38:33 by sebasnadu         #+#    #+#             */
-/*   Updated: 2023/07/26 23:27:43 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/05 18:03:34 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/get_next_line.h"
-#include "../../includes/libft.h"
+#include "../../include/get_next_line.h"
+#include "../../include/libft.h"
 
 static char	*get_next(char *buffer)
 {

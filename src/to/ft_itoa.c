@@ -6,11 +6,11 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 12:40:11 by johnavar          #+#    #+#             */
-/*   Updated: 2023/07/04 17:48:08 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/05 18:08:49 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../include/libft.h"
 
 static size_t	nbr_len(int nbr)
 {

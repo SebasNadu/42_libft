@@ -6,11 +6,11 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 13:03:12 by johnavar          #+#    #+#             */
-/*   Updated: 2023/07/04 16:52:57 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/05 18:04:16 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../include/libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
