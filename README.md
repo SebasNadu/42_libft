@@ -147,6 +147,21 @@ int	ft_isupper(int c);
 
     The function ft_isupper returns 1 if c is an uppercase letter, and 0 otherwise.
 
+### [ft_lstadd_back](/src/lst/ft_lstadd_back.c)
+```c
+void	ft_lstadd_back(t_list **lst, t_list *new)
+```
+	The function ft_lstadd_back adds the new element to the end of the list(lst). The function recives as
+	parameters the address of a pointer to the first link of a list, and the address of a pointer
+	to the node node to be added to the list.
+
+### [ft_lstadd_front](/src/lst/ft_listadd_front)
+```c
+void ft_lstadd_front(t_list **lst, t_list *new)
+```
+	The funcion ft_lstadd_front adds the new element as the first element of the list(lst). The function recives
+	as parameter the address of a pointer to the first link of a list, and the adress of a pointer to the
+	node to be added to the list.
 ### [ft_bzero](/src/mem/ft_bzero.c)
 
 ```c
