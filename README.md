@@ -734,7 +734,7 @@ void	ft_radix_sort(int *nbrs, int len, int base);
     digits. It is a stable sort, which means that it preserves the relative order of equal elements.
     Radix sort is efficient on large lists. This implementation is not limited to positive numbers,
     also negative and it is possible to change the base of the numbers, affecting the time
-    complexity with big numbers. The default base is 10.
+    complexity with big numbers.
 
 | TC(Best) | TC(Average) | TC(Worst) | SC(Worst) |
 | :------: | :---------: | :-------: | :-------: |
