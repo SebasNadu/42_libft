@@ -6,64 +6,81 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 23:28:52 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/09 20:11:41 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/09 22:28:55 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
+
+inline static int	ft_abs(int nbr)
+{
+	if (nbr < 0)
+		return (-nbr);
+	return (nbr);
+}
 
 static int	get_max(int *nbrs, int len)
 {
 	int	i;
 	int	max;
 
-	max = nbrs[0];
+	max = ft_abs(nbrs[0]);
 	i = 0;
 	while (++i < len)
-		if (nbrs[i] > max)
-			max = nbrs[i];
+		if (ft_abs(nbrs[i]) > max)
+			max = ft_abs(nbrs[i]);
 	return (max);
 }
 
-static void	counting_sort(int nbrs[], int len, int base, int exponent)
+static void	counting_sort(int *nbrs, int *output, t_radix *rdata)
 {
-	int	*output;
-	int	*counter;
 	int	i;
+	int	index;
 
-	output = ft_calloc(len, sizeof(int));
-	counter = ft_calloc(base, sizeof(int));
+	ft_memset(rdata->counter, 0, sizeof(int) * (rdata->base * 2 - 1));
 	i = -1;
-	while (++i < len)
-		counter[(nbrs[i] / exponent) % base]++;
+	while (++i < rdata->len)
+	{
+		index = ((nbrs[i] / rdata->expo) % rdata->base) + (rdata->base - 1);
+		rdata->counter[index]++;
+	}
 	i = 0;
-	while (++i < base)
-		counter[i] += counter[i - 1];
-	i = len;
+	while (++i < (rdata->base * 2) - 1)
+		rdata->counter[i] += rdata->counter[i - 1];
+	i = rdata->len;
 	while (--i >= 0)
 	{
-		output[counter[(nbrs[i] / exponent) % base] - 1] = nbrs[i];
-		counter[(nbrs[i] / exponent) % base]--;
+		index = ((nbrs[i] / rdata->expo) % rdata->base) + (rdata->base - 1);
+		output[rdata->counter[index] - 1] = nbrs[i];
+		rdata->counter[index]--;
 	}
-	i = -1;
-	while (++i < len)
-		nbrs[i] = output[i];
-	free(output);
-	free(counter);
-	output = NULL;
-	counter = NULL;
 }
 
 void	ft_radix_sort(int *nbrs, int len, int base)
 {
-	int	max;
-	int	exponent;
+	t_radix	rdata;
+	int		i;
 
-	max = get_max(nbrs, len);
-	exponent = 1;
-	while (max / exponent >= 1)
+	rdata.max = get_max(nbrs, len);
+	rdata.output = (int *)malloc(sizeof(int) * len);
+	rdata.counter = (int *)malloc(sizeof(int) * (base * 2 - 1));
+	if (!rdata.output || !rdata.counter)
+		return ;
+	rdata.expo = 1;
+	rdata.base = base;
+	rdata.len = len;
+	i = -1;
+	while (rdata.max / rdata.expo >= 1)
 	{
-		counting_sort(nbrs, len, base, exponent);
-		exponent *= base;
+		if (++i % 2 == 0)
+			counting_sort(nbrs, rdata.output, &rdata);
+		else
+			counting_sort(rdata.output, nbrs, &rdata);
+		rdata.expo *= base;
 	}
+	if (i % 2 == 0)
+		while (0 <= --rdata.len)
+			nbrs[rdata.len] = rdata.output[rdata.len];
+	free(rdata.output);
+	free(rdata.counter);
 }

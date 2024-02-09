@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 23:02:00 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/09 14:23:03 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/09 22:29:18 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,16 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct s_radix
+{
+	int	base;
+	int	len;
+	int	expo;
+	int	max;
+	int	*output;
+	int	*counter;
+}	t_radix;
 
 // Boolean
 int		ft_isalnum(int c);
