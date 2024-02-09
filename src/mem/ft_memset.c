@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:52:27 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/09 14:46:28 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/09 14:52:16 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ inline static void	memset_last_bytes(long *dstp, const unsigned long long cccc,
 	len2 = (*len) / sizeof(unsigned long long) + 1;
 	while (--len2 > 0)
 	{
-		(*(unsigned long long *)dstp) = cccc;
+		((unsigned long long *)(*dstp))[0] = cccc;
 		*dstp += sizeof(unsigned long long);
 	}
 	*len %= sizeof(unsigned long long);
@@ -63,16 +63,16 @@ void	*ft_memset(void *ptr, int c, size_t len)
 		if (sizeof(unsigned long long) > 4)
 			cccc |= cccc << 32;
 		memset_align64(&dstp, &len, c);
-		len2 = (len / 8 * sizeof(unsigned long long)) + 1;
+		len2 = len / (8 * sizeof(unsigned long long)) + 1;
 		while (--len2 > 0)
 		{
 			mem_fill((unsigned long long *)dstp, cccc);
 			dstp += 8 * sizeof(unsigned long long);
 		}
 		len %= 8 * sizeof(unsigned long long);
-		memset_last_bytes(&dstp, c, &len);
+		memset_last_bytes(&dstp, cccc, &len);
 	}
 	while (len-- > 0)
-		*(unsigned char *)dstp++ = (unsigned char)c;
+		((unsigned char *)dstp++)[0] = c;
 	return (ptr);
 }
