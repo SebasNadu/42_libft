@@ -1,6 +1,7 @@
-<div>
-	<h1 align="center">LIBFT</h1>
-</div>
+<picture>
+	<img alt="libft" src="https://github.com/SebasNadu/42_libft/assets/98430438/dd0300ba-2982-4c91-a9d9-8df8488c99da">
+</picture>
+
 
 ## Description
 
