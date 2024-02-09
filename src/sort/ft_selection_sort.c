@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_matrixfree.c                                    :+:      :+:    :+:   */
+/*   ft_selection_sort.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 12:25:04 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/07 19:02:19 by sebasnadu        ###   ########.fr       */
+/*   Created: 2024/02/07 20:49:36 by sebasnadu         #+#    #+#             */
+/*   Updated: 2024/02/09 12:56:59 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
-
-void	ft_matrixfree(char ***mtx)
+void	ft_sort_selection(int *nbrs, int len)
 {
 	int	i;
+	int	j;
+	int	smallest;
+	int	tmp;
 
-	i = 0;
-	while (mtx && mtx[0] && mtx[0][i])
+	if (!nbrs || len < 2)
+		return ;
+	i = -1;
+	while (++i < len)
 	{
-		free(mtx[0][i]);
-		i++;
-	}
-	if (mtx && *mtx)
-	{
-		free(*mtx);
-		*mtx = NULL;
+		smallest = i;
+		j = i;
+		while (++j < len)
+			if (nbrs[j] < nbrs[smallest])
+				smallest = j;
+		if (smallest != i)
+		{
+			tmp = nbrs[i];
+			nbrs[i] = nbrs[smallest];
+			nbrs[smallest] = tmp;
+		}
 	}
 }

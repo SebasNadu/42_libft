@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 23:02:00 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/05 22:02:58 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/09 13:10:28 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
+# include <stdbool.h>
 # include "get_next_line.h"
 # include "ft_printf.h"
 
@@ -37,6 +38,7 @@ int		ft_isprint(int c);
 int		ft_isspace(int c);
 int		ft_isupper(int c);
 int		ft_islower(int c);
+int		ft_ispunct(int c);
 
 // String
 char	**ft_split(char const *s, char c);
@@ -68,6 +70,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *str, int c, size_t n);
+void	ft_memclear(void **ptr);
+void	*ft_realloc(void *ptr, size_t size);
 
 // Put
 void	ft_putchar_fd(char c, int fd);
@@ -91,5 +95,16 @@ void	ft_matrixfree(char ***matrix);
 char	**ft_extend_matrix(char **matrix, char *str);
 char	**ft_matrixdup(char **tokens);
 int		ft_matrixlen(char **matrix);
+
+// Sort
+void	ft_sort_selection(int *nbrs, int len);
+void	ft_bubble_sort(int *nbrs, int len);
+void	ft_insertion_sort(int *nbrs, int len);
+void	ft_shell_sort(int *nbrs, int len);
+void	ft_merge_sort(int *nbrs, int len);
+void	ft_quick_sort(int *nbrs, int len);
+void	ft_heap_sort(int *nbrs, int len);
+void	ft_counting_sort(int *nbrs, int len);
+void	ft_radix_sort(int *nbrs, int len, int base);
 
 #endif

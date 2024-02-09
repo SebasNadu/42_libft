@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:31:31 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/05 20:55:01 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/09 13:02:10 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (0);
 	str[len] = '\0';
 	i = 0;
-	while (i < size)
+	while (i < len)
 	{
 		str[i] = f(i, s[i]);
 		++i;

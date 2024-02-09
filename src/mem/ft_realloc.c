@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_matrixfree.c                                    :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 12:25:04 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/07 19:02:19 by sebasnadu        ###   ########.fr       */
+/*   Created: 2024/02/07 20:00:23 by sebasnadu         #+#    #+#             */
+/*   Updated: 2024/02/07 20:14:12 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-void	ft_matrixfree(char ***mtx)
+void	*ft_realloc(void *ptr, size_t size)
 {
-	int	i;
+	void	*new;
 
-	i = 0;
-	while (mtx && mtx[0] && mtx[0][i])
+	if (!ptr)
+		return (ft_calloc(1, size));
+	if (!size && ptr)
 	{
-		free(mtx[0][i]);
-		i++;
+		ft_memclear(&ptr);
+		return (ptr);
 	}
-	if (mtx && *mtx)
-	{
-		free(*mtx);
-		*mtx = NULL;
-	}
+	new = malloc(size);
+	if (!new)
+		return (NULL);
+	ft_memcpy(new, ptr, size);
+	ft_memclear(&ptr);
+	ptr = new;
+	return (ptr);
 }

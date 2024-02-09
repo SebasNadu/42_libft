@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_matrixfree.c                                    :+:      :+:    :+:   */
+/*   ft_insertion_sort.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 12:25:04 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/07 19:02:19 by sebasnadu        ###   ########.fr       */
+/*   Created: 2024/02/07 20:33:36 by sebasnadu         #+#    #+#             */
+/*   Updated: 2024/02/09 12:56:01 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
-
-void	ft_matrixfree(char ***mtx)
+void	ft_insertion_sort(int *nbrs, int len)
 {
 	int	i;
+	int	j;
+	int	key;
 
+	if (len < 2 || !nbrs)
+		return ;
 	i = 0;
-	while (mtx && mtx[0] && mtx[0][i])
+	while (++i < len)
 	{
-		free(mtx[0][i]);
-		i++;
-	}
-	if (mtx && *mtx)
-	{
-		free(*mtx);
-		*mtx = NULL;
+		key = nbrs[i];
+		j = i - 1;
+		while (j >= 0 && nbrs[j] > key)
+		{
+			nbrs[j + 1] = nbrs[j];
+			--j;
+		}
+		nbrs[j + 1] = key;
 	}
 }

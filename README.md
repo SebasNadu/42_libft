@@ -56,19 +56,27 @@ cc -o my_program my_program.c -L. -lft
 Mandatory from `<ctype.h>` | Mandatory from `<string.h>` | Mandatory from `<stdlib.h>` | Mandatory non-standard | Bonus Functions | Extra Functions
 :---: | :---: | :---: | :---: | :---: | :---:
 [ft_isalpha](#ft_isalpha)| [ft_memset](#ft_memset) | [ft_atoi](#ft_atoi) | [ft_substr](#ft_substr) | [ft_lstnew](#ft_lstnew) | [ft_printf](#ft_printf)
-[ft_isdigit](#ft_isdigit)| [ft_strlen](#ft_strlen) | [ft_calloc](#ft_calloc) | [ft_strjoin](#ft_strjoin) | [ft_lstadd_front](#ft_lstadd_front) | [get_next_line](#get_next_line)
-[ft_isalnum](#ft_isalnum)| [ft_bzero](#ft_bzero) | | [ft_strtrim](#ft_strtrim) | [ft_lstsize](#ft_lstsize) | [ft_isblank](#ft_isblank)
-[ft_isascii](#ft_isascii)| [ft_memcpy](#ft_memcpy) | | [ft_split](#ft_split) | [ft_lstlast](#ft_lstlast) | [ft_isputc](#ft_isputc)
-[ft_isprint](#ft_isprint)| [ft_memmove](#ft_memmove) | | [ft_itoa](#ft_itoa) | [ft_lstadd_back](#ft_lstadd_back) | [ft_isspace](#ft_isspace)
-[ft_toupper](#ft_toupper)| [ft_strlcpy](#ft_strlcpy) | | [ft_strmapi](#ft_strmapi) | [ft_lstdelone](#ft_lstdelone) | [ft_isupper](#ft_isupper)
-[ft_tolower](#ft_tolower)| [ft_strlcat](#ft_strlcat) | | [ft_striteri](#ft_striteri) | [ft_lstclear](#ft_lstclear) | [ft_extend_matrix](#ft_extend_matrix)
-| | [ft_strchr](#ft_strchr) | | [ft_putchar_fd](#ft_putchar_fd) | [ft_lstiter](#ft_lstiter) | [ft_matrixdup](#ft_matrixdup)
-| | [ft_strrchr](#ft_strrchr) | | [ft_putstr_fd](#ft_putstr_fd) | [ft_lstmap](#ft_lstmap) | [ft_matrixfree](#ft_matrixfree)
-| | [ft_strncmp](#ft_strncmp) | | [ft_putenl_fd](#ft_putendl_fd) | | [ft_matrixlen](#ft_matrixlen)
-| | [ft_memchr](#ft_memchr) | | [ft_putnbr_fd](#ft_putnbr_fd) | | [ft_memclear](#ft_memclear)
-| | [ft_memcmp](#ft_memcmp)
-| | [ft_strnstr](#ft_strnstr)
-| | [ft_strdup](#ft_strdup)
+[ft_isdigit](#ft_isdigit)| [ft_strlen](#ft_strlen) | [ft_calloc](#ft_calloc) | [ft_strjoin](#ft_strjoin) | [ft_lstadd_front](#ft_lstadd_front) | [ft_printf_fd](#ft_printf_fd)
+[ft_isalnum](#ft_isalnum)| [ft_bzero](#ft_bzero) | | [ft_strtrim](#ft_strtrim) | [ft_lstsize](#ft_lstsize) | [get_next_line](#get_next_line)
+[ft_isascii](#ft_isascii)| [ft_memcpy](#ft_memcpy) | | [ft_split](#ft_split) | [ft_lstlast](#ft_lstlast) | [ft_isblank](#ft_isblank)
+[ft_isprint](#ft_isprint)| [ft_memmove](#ft_memmove) | | [ft_itoa](#ft_itoa) | [ft_lstadd_back](#ft_lstadd_back) | [ft_isputc](#ft_isputc)
+[ft_toupper](#ft_toupper)| [ft_strlcpy](#ft_strlcpy) | | [ft_strmapi](#ft_strmapi) | [ft_lstdelone](#ft_lstdelone) | [ft_isspace](#ft_isspace)
+[ft_tolower](#ft_tolower)| [ft_strlcat](#ft_strlcat) | | [ft_striteri](#ft_striteri) | [ft_lstclear](#ft_lstclear) | [ft_isupper](#ft_isupper)
+| | [ft_strchr](#ft_strchr) | | [ft_putchar_fd](#ft_putchar_fd) | [ft_lstiter](#ft_lstiter) | [ft_extend_matrix](#ft_extend_matrix)
+| | [ft_strrchr](#ft_strrchr) | | [ft_putstr_fd](#ft_putstr_fd) | [ft_lstmap](#ft_lstmap) | [ft_matrixdup](#ft_matrixdup)
+| | [ft_strncmp](#ft_strncmp) | | [ft_putenl_fd](#ft_putendl_fd) | | [ft_matrixfree](#ft_matrixfree)
+| | [ft_memchr](#ft_memchr) | | [ft_putnbr_fd](#ft_putnbr_fd) | | [ft_matrixlen](#ft_matrixlen)
+| | [ft_memcmp](#ft_memcmp) | | | | [ft_memclear](#ft_memclear)
+| | [ft_strnstr](#ft_strnstr) | | | | [ft_realloc](#ft_realloc)
+| | [ft_strdup](#ft_strdup) | | | | [ft_bubble_sort](#ft_bubble_sort)
+| | | | | | [ft_insertion_sort](#ft_insertion_sort)
+| | | | | | [ft_selection_sort](#ft_selection_sort)
+| | | | | | [ft_shell_sort](#ft_shell_sort)
+| | | | | | [ft_merge_sort](#ft_merge_sort)
+| | | | | | [ft_quick_sort](#ft_quick_sort)
+| | | | | | [ft_heap_sort](#ft_heap_sort)
+| | | | | | [ft_counting_sort](#ft_counting_sort)
+| | | | | | [ft_radix_sort](#ft_radix_sort)
 
 ## Content
 
@@ -290,7 +298,16 @@ void	*ft_memset(void *b, int c, size_t len);
     The function ft_memset fills the first len bytes of the memory area pointed to by b with the
     constant byte c.
 
-### [ft_putchar?fd](/src/put/ft_putchar_fd.c)
+### [ft_realloc](/src/mem/ft_realloc.c)
+
+```c
+void	*ft_realloc(void *ptr, size_t size);
+```
+
+    The function ft_realloc changes the size of the memory block pointed to by ptr to size bytes.
+    It returns a pointer to the reallocated memory block.
+
+### [ft_putchar_fd](/src/put/ft_putchar_fd.c)
 
 ```c
 void	ft_putchar_fd(char c, int fd);
@@ -481,3 +498,254 @@ int	ft_tolower(int c);
 ```
 
     The function ft_tolower returns the lowercase version of c.
+
+### [ft_memclear](/src/mem/ft_memclear.c)
+
+```c
+void	ft_memclear(void *s, size_t n);
+```
+
+    The function ft_memclear free the memory area pointed to by s and sets it to NULL.
+
+### [ft_extend_matrix](/src/mem/ft_extend_matrix.c)
+
+```c
+void	**ft_extend_matrix(void **matrix, char *str);
+```
+
+    The function ft_extend_matrix extends the matrix with the string str. The function returns a
+    pointer to a new matrix with the string in the last position and it frees the old matrix.
+
+### [ft_matrixdup](/src/mem/ft_matrixdup.c)
+
+```c
+void	**ft_matrixdup(void **mtx);
+```
+
+    The function ft_matrixdup duplicates the matrix(mtx). The function returns a pointer to a new
+    matrix with the same content as mtx.
+
+### [ft_matrixfree](/src/mem/ft_matrixfree.c)
+
+```c
+void	ft_matrixfree(void **mtx);
+```
+
+    The function ft_matrixfree frees the matrix(mtx).
+
+### [ft_matrixlen](/src/mem/ft_matrixlen.c)
+
+```c
+int	ft_matrixlen(void **mtx);
+```
+
+    The function ft_matrixlen returns the length of the matrix(mtx).
+
+### [ft_printf](/src/printf/ft_printf.c)
+
+```c
+int	ft_printf(const char *format, ...);
+```
+
+    The function ft_printf is my own implementation of the function printf. It receives the
+    format string and the arguments to be formatted. The function returns the number of
+    characters printed.
+
+### [ft_printf_fd](/src/printf/ft_printf_fd.c)
+
+```c
+int	ft_printf_fd(int fd, const char *format, ...);
+```
+
+    The function ft_printf_fd is my own implementation of the function printf with the option of
+    a file descriptor. It receives the file descriptor, the format string and the arguments
+    to be formatted. The function returns the number of characters printed.
+
+### [get_next_line](/src/gnl/get_next_line.c)
+
+```c
+char	*get_next_line(int fd);
+```
+
+    The function get_next_line reads a line from a file descriptor. It returns a pointer to the
+    line or NULL if it fails. A line is a sequence of characters terminated by a newline
+    character ('\n') or a null byte. get_next_line use a buffer for each file descriptor, making
+    possible to read from multiple files without loosing data.
+
+### [ft_bubble_sort](/src/sort/ft_bubble_sort.c)
+
+```c
+void	ft_bubble_sort(int *nbrs, int len);
+```
+
+    The function ft_bubble_sort sorts the array nbrs of size len in ascending order. Bubble sort
+    is a simple sorting algorithm that repeatedly swaps adjacent elements if they are in wrong
+    order. Each iteration, the largest element is placed at the end of the array, reducing the each
+    time the number of elements to be compared, if the elements are in correct order, it will stop.
+
+| TC(Best) | TC(Average) | TC(Worst) | SC(Worst) |
+| :------: | :---------: | :-------: | :-------: |
+|   O(n)   |   O(n^2)    |  O(n^2)   |   O(1)    |
+
+<sub>TC: Time Complexity, SC: Space Complexity</sub>
+
+### [ft_insertion_sort](/src/sort/ft_insertion_sort.c)
+
+```c
+void	ft_insertion_sort(int *nbrs, int len);
+```
+
+    The function ft_insertion_sort sorts the array nbrs of size len in ascending order. Insertion
+    sort is a simple sorting algorithm that builds the final sorted array one item at a time. It
+    is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort,
+    or merge sort. However, insertion sort provides several advantages:
+    - It is a stable sort, which means that it preserves the relative order of equal elements.
+    - It is an in-place sort, which means that it does not require any additional memory
+    	allocations or copies.
+
+| TC(Best) | TC(Average) | TC(Worst) | SC(Worst) |
+| :------: | :---------: | :-------: | :-------: |
+|   O(n)   |   O(n^2)    |  O(n^2)   |   O(1)    |
+
+<sub>TC: Time Complexity, SC: Space Complexity</sub>
+
+### [ft_selection_sort](/src/sort/ft_selection_sort.c)
+
+```c
+void	ft_selection_sort(int *nbrs, int len);
+```
+
+    The function ft_selection_sort sorts the array nbrs of size len in ascending order. Selection
+    sort is a simple sorting algorithm that repeatedly finds the minimum element in the array
+    and swaps it with the first element. It is a stable sort, which means that it preserves the
+    relative order of equal elements. Selection sort is inefficient on large lists, and it does
+    not require any additional memory allocations or copies.
+
+| TC(Best) | TC(Average) | TC(Worst) | SC(Worst) |
+| :------: | :---------: | :-------: | :-------: |
+|  O(n^2)  |   O(n^2)    |  O(n^2)   |   O(1)    |
+
+<sub>TC: Time Complexity, SC: Space Complexity</sub>
+
+### [ft_shell_sort](/src/sort/ft_shell_sort.c)
+
+```c
+void	ft_shell_sort(int *nbrs, int len);
+```
+
+    The function ft_shell_sort sorts the array nbrs of size len in ascending order. Shell sort is a
+    sorting algorithm that is a generalization of insertion sort. It starts by sorting pairs of
+    elements far apart from each other, then progressively reducing the gap between elements to be
+    compared. By starting with far apart elements, it can move some out-of-place elements into
+    position faster than a simple nearest neighbor exchange. It is not a stable sort, which means
+    that it does not preserve the relative order of equal elements. Shell sort is efficient on small
+    lists, and it does not require any additional memory allocations or copies. It has little
+    better performance than insertion sort, but with more complexity affecting for example best time
+    complexity cases in its performance.
+
+|   TC(Best)   |  TC(Average)   |   TC(Worst)    | SC(Worst) |
+| :----------: | :------------: | :------------: | :-------: |
+| O(n\*log(n)) | O(n(log(n))^2) | O(n(log(n))^2) |   O(1)    |
+
+<sub>TC: Time Complexity, SC: Space Complexity</sub>
+
+### [ft_merge_sort](/src/sort/ft_merge_sort.c)
+
+```c
+void	ft_merge_sort(int *nbrs, int len);
+```
+
+    The function ft_merge_sort sorts the array nbrs of size len in ascending order. Merge sort
+    is a divide and conquer algorithm that recursively divides the array into two halves, sorts
+    them, and then merges them. It is a stable sort, which means that it preserves the relative
+    order of equal elements. Merge sort is efficient on large lists, but it requires
+    memory allocations.
+
+|   TC(Best)   | TC(Average)  |  TC(Worst)   | SC(Worst) |
+| :----------: | :----------: | :----------: | :-------: |
+| O(n\*log(n)) | O(n\*log(n)) | O(n\*log(n)) |   O(n)    |
+
+<sub>TC: Time Complexity, SC: Space Complexity</sub>
+
+### [ft_quick_sort](/src/sort/ft_quick_sort.c)
+
+```c
+void	ft_quick_sort(int *nbrs, int len);
+```
+
+    The function ft_quick_sort sorts the array nbrs of size len in ascending order. Quick sort
+    is a divide and conquer algorithm that recursively divides the array into two halves, sorts
+    them, and then merges them. It can be a stable sort, which means that it preserves the relative
+    order of equal elements. Quick sort is efficient on large  and medium lists, it not necessary
+    require memory allocations. In worst cases it is slower than merge sort, but in space complexity
+    it is better.
+
+|   TC(Best)   | TC(Average)  | TC(Worst) | SC(Worst) |
+| :----------: | :----------: | :-------: | :-------: |
+| O(n\*log(n)) | O(n\*log(n)) |  O(n^2)   | O(log(n)) |
+
+<sub>TC: Time Complexity, SC: Space Complexity</sub>
+
+### [ft_heap_sort](/src/sort/ft_heap_sort.c)
+
+```c
+void	ft_heap_sort(int *nbrs, int len);
+```
+
+    The function ft_heap_sort sorts the array nbrs of size len in ascending order. Heap sort
+    is a divide and conquer algorithm that recursively divides the array into two halves, sorts
+    them, and then merges them. It is a stable sort, which means that it preserves the relative
+    order of equal elements. Heap sort is efficient on large lists, it not required
+    memory allocations. It has better performance than quick sort and merge sort, but its implementation
+    can be more complex.
+
+|   TC(Best)   | TC(Average)  |  TC(Worst)   | SC(Worst) |
+| :----------: | :----------: | :----------: | :-------: |
+| O(n\*log(n)) | O(n\*log(n)) | O(n\*log(n)) |   O(1)    |
+
+<sub>TC: Time Complexity, SC: Space Complexity</sub>
+
+### [ft_counting_sort](/src/sort/ft_counting_sort.c)
+
+```c
+void	ft_counting_sort(int *nbrs, int len);
+```
+
+    The function ft_counting_sort sorts the array nbrs of size len in ascending order. Counting sort
+    is a sorting algorithm that sorts the elements of an array by counting the number of occurrences
+    of each unique element in the array. It is a stable sort, which means that it preserves the
+    relative order of equal elements. Counting sort is efficient on small ranges of numbers. This
+    implementation is not limited to positive numbers, also negative.
+
+| TC(Best) | TC(Average) | TC(Worst) | SC(Worst) |
+| :------: | :---------: | :-------: | :-------: |
+|  O(n+k)  |   O(n+k)    |  O(n+k)   |   O(k)    |
+
+<sub>TC: Time Complexity, SC: Space Complexity, n: number of elements, k: max number value</sub>
+
+### [ft_radix_sort](/src/sort/ft_radix_sort.c)
+
+```c
+void	ft_radix_sort(int *nbrs, int len, int base);
+```
+
+    The function ft_radix_sort sorts the array nbrs of size len in ascending order. Radix sort is a
+    non-comparative sorting algorithm that sorts the elements of an array by processing individual
+    digits. It is a stable sort, which means that it preserves the relative order of equal elements.
+    Radix sort is efficient on large lists. This implementation is not limited to positive numbers,
+    also negative and it is possible to change the base of the numbers, affecting the time
+    complexity with big numbers. The default base is 10.
+
+| TC(Best) | TC(Average) | TC(Worst) | SC(Worst) |
+| :------: | :---------: | :-------: | :-------: |
+|  O(nk)   |    O(nk)    |   O(nk)   |  O(n+k)   |
+
+<sub>TC: Time Complexity, SC: Space Complexity, n: max number of digits, k: base</sub>
+
+## Issues and improvements
+
+Feel free to open an issue if you find a bug on the project or if you have an idea for a new
+function. If you have already found the solution to a bug, I would be very happy to review
+your pull request.
+
+If you like this project, feel free to star it 🌟 on GitHub. Thanks!
