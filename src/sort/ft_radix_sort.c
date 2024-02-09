@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 23:28:52 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/09 15:42:40 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/09 17:21:28 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,13 @@ static int	get_max(long *nbrs, int len)
 	int		i;
 
 	max = ft_labs(nbrs[0]);
-	i = 0;
-	while (++i < len)
+	i = 1;
+	while (i < len)
+	{
 		if (ft_labs(nbrs[i]) > max)
 			max = ft_labs(nbrs[i]);
+		++i;
+	}
 	return (max);
 }
 
