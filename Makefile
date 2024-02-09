@@ -6,7 +6,7 @@
 #    By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 16:45:08 by johnavar          #+#    #+#              #
-#    Updated: 2024/02/05 18:03:04 by sebasnadu        ###   ########.fr        #
+#    Updated: 2024/02/09 13:47:07 by sebasnadu        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ NAME	= libft.a
 
 DIR_SRCS	= src
 DIR_OBJS	= obj
-SUBDIRS		= is to mem str put lst printf gnl mtx
+SUBDIRS		= is to mem str put lst printf gnl mtx sort
 
 SRCS_DIRS	= $(foreach dir, $(SUBDIRS), $(DIR_SRCS)/$(dir))
 OBJS_DIRS	= $(foreach dir, $(SUBDIRS), $(DIR_OBJS)/$(dir))

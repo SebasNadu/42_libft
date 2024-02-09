@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:52:27 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/05 18:05:36 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/09 14:38:54 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static inline void	memset_align64(long *dstp, size_t *len, int c)
 {
-	while ((*dstp) % sizeof(unsigned long long))
+	while ((*dstp) % sizeof(unsigned long long) != 0)
 	{
 		*(unsigned char *)dstp = c;
 		dstp++;

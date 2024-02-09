@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 23:02:00 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/09 13:10:28 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/09 14:23:03 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ char	**ft_matrixdup(char **tokens);
 int		ft_matrixlen(char **matrix);
 
 // Sort
-void	ft_sort_selection(int *nbrs, int len);
+void	ft_selection_sort(int *nbrs, int len);
 void	ft_bubble_sort(int *nbrs, int len);
 void	ft_insertion_sort(int *nbrs, int len);
 void	ft_shell_sort(int *nbrs, int len);

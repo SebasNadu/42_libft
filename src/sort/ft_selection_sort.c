@@ -6,11 +6,11 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 20:49:36 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/09 12:56:59 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/09 14:22:44 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_selection(int *nbrs, int len)
+void	ft_selection_sort(int *nbrs, int len)
 {
 	int	i;
 	int	j;

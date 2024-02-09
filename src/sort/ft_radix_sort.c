@@ -6,13 +6,13 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 23:28:52 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/09 13:09:17 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/09 13:53:03 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-static inline int	abs(long nbr)
+inline static long	ft_labs(long nbr)
 {
 	if (nbr < 0)
 		return (-nbr);
@@ -24,11 +24,11 @@ static int	get_max(long *nbrs, int len)
 	long	max;
 	int		i;
 
-	max = abs(nbrs[0]);
+	max = ft_labs(nbrs[0]);
 	i = 0;
 	while (++i < len)
-		if (abs(nbrs[i]) > max)
-			max = abs(nbrs[i]);
+		if (ft_labs(nbrs[i]) > max)
+			max = ft_labs(nbrs[i]);
 	return (max);
 }
 
@@ -49,8 +49,8 @@ static void	counting_sort(int *nbrs, int len, int base, int exponent)
 	i = len;
 	while (--i >= 0)
 	{
-		output[counter[(abs(nbrs[i]) / exponent) % base] - 1] = nbrs[i];
-		counter[(abs(nbrs[i]) / exponent) % base]--;
+		output[counter[(ft_labs(nbrs[i]) / exponent) % base] - 1] = nbrs[i];
+		counter[(ft_labs(nbrs[i]) / exponent) % base]--;
 	}
 	i = -1;
 	while (++i < len)

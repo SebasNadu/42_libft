@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 17:16:59 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/09 12:56:45 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/09 13:49:53 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ static int	partition(int *nbrs, int start, int end)
 	int	pivot;
 	int	i;
 	int	j;
-	int	tmp;
 
 	pivot = median(nbrs[start], nbrs[(start + end) / 2], nbrs[end]);
 	i = start - 1;
@@ -78,5 +77,5 @@ void	ft_quick_sort(int *nbrs, int len)
 {
 	if (len < 2 || !nbrs)
 		return ;
-	ft_quick_sort_recursive(nbrs, 0, len - 1);
+	quick_sort_recursive(nbrs, 0, len - 1);
 }
