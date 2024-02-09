@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 23:28:52 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/09 13:53:03 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/09 15:42:40 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,4 @@ void	ft_radix_sort(int *nbrs, int len, int base)
 		counting_sort(nbrs, len, base, exponent);
 		exponent *= base;
 	}
-	free(lnbrs);
-	lnbrs = NULL;
 }
