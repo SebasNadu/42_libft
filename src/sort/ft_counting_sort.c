@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:00:35 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/09 13:07:57 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/09 13:48:13 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static void	find_min_max(int *nbrs, int len, int *min, int *max)
 {
 	int	i;
 
+	i = 0;
 	*min = nbrs[i];
 	*max = nbrs[i];
-	i = 0;
 	while (++i < len)
 	{
 		if (nbrs[i] < *min)

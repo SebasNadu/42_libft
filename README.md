@@ -17,22 +17,22 @@ The bonus contains functions to work with linked lists. I added extra functions 
 git clone https://github.com/SebasNadu/42_libft.git
 ```
 
-#### Go to the libft folder and compile it.
+#### Build the library.
 
 ```bash
-cd libft && make
+make -C 42_libft
 ```
 
 #### Include the library in your project.
 
 ```c
-#include "libft.h"
+#include "./42_libft/include/libft.h" (Path to the library header)
 ```
 
 #### Compile your project with the library.
 
 ```bash
-cc -o my_program my_program.c -L. -lft
+cc -o my_program my_program.c -L42_libft -lft
 ```
 
 #### Makefile Rules
