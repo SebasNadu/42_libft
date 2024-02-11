@@ -847,7 +847,3 @@ function. If you have already found the solution to a bug, I would be very happy
 your pull request.
 
 If you like this project, feel free to star it 🌟 on GitHub. Thanks!
-
-```
-
-```
