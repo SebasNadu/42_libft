@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_mtx_free.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 18:26:27 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/11 18:07:53 by sebasnadu        ###   ########.fr       */
+/*   Created: 2023/11/21 12:25:04 by sebasnadu         #+#    #+#             */
+/*   Updated: 2024/02/11 16:35:58 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
+void	ft_mtx_free(char ***mtx)
 {
-	size_t	i;
+	int	i;
 
-	if (!src)
-		return (0);
 	i = 0;
-	while (src[i] && i < dstsize - 1)
+	while (mtx && mtx[0] && mtx[0][i])
 	{
-		dest[i] = src[i];
-		++i;
+		free(mtx[0][i]);
+		i++;
 	}
-	if (dstsize > 0)
-		dest[i] = '\0';
-	while (src[i])
-		++i;
-	return (i);
+	if (mtx && *mtx)
+	{
+		free(*mtx);
+		*mtx = NULL;
+	}
 }

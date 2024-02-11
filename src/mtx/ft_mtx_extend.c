@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_extend_matrix.c                                 :+:      :+:    :+:   */
+/*   ft_mtx_extend.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 12:30:30 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/05 18:05:46 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/11 16:35:44 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-char	**ft_extend_matrix(char **matrix, char *str)
+char	**ft_mtx_extend(char **matrix, char *str)
 {
 	char	**new;
 	int		len;
@@ -22,7 +22,7 @@ char	**ft_extend_matrix(char **matrix, char *str)
 	new = NULL;
 	if (!str)
 		return (matrix);
-	len = ft_matrixlen(matrix);
+	len = ft_mtx_len(matrix);
 	new = (char **)malloc(sizeof(char *) * (len + 2));
 	if (!new)
 		return (NULL);
@@ -32,11 +32,11 @@ char	**ft_extend_matrix(char **matrix, char *str)
 		new[i] = ft_strdup(matrix[i]);
 		if (!new[i])
 		{
-			ft_matrixfree(&matrix);
-			ft_matrixfree(&new);
+			ft_mtx_free(&matrix);
+			ft_mtx_free(&new);
 		}
 	}
 	new[i] = ft_strdup(str);
-	ft_matrixfree(&matrix);
+	ft_mtx_free(&matrix);
 	return (new);
 }

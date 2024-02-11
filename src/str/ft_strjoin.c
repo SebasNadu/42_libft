@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:34:27 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/05 18:07:41 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/11 18:27:53 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
 	char	*str;
-	int		len_s1;
-	int		len_s2;
+	size_t	i;
+	size_t	len_s1;
+	size_t	len_s2;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);

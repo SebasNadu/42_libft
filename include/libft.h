@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 23:02:00 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/11 13:28:26 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/11 19:12:20 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <stdbool.h>
+# include <stdarg.h>
 # include "get_next_line.h"
 # include "ft_printf.h"
 
@@ -83,6 +84,8 @@ char			*ft_strnstr(const char *str, const char *substr, size_t n);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			**ft_subsplit(char const *s, char *set);
+char			*ft_strjoin_var(char *first, ...);
 
 // Conversion
 int				ft_atoi(const char *str);
@@ -116,13 +119,17 @@ void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 
 // Matrix
-void			ft_matrixfree(char ***matrix);
-char			**ft_extend_matrix(char **matrix, char *str);
-char			**ft_matrixdup(char **tokens);
-int				ft_matrixlen(char **matrix);
+void			ft_mtx_free(char ***matrix);
+char			**ft_mtx_extend(char **matrix, char *str);
+char			**ft_mtx_dup(char **tokens);
+int				ft_mtx_len(char **matrix);
+void			ft_mtx_putfd(char **mtx, int fd, bool nl);
+char			**ft_lsttomatrix(t_list *lst);
+t_list			*ft_mtxtolst(char **mtx);
 
 // Sort
 void			ft_selection_sort(int *nbrs, int len);

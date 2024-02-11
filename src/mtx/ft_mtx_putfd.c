@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_matrixdup.c                                     :+:      :+:    :+:   */
+/*   ft_mtx_putfd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 12:29:28 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/07 19:00:55 by sebasnadu        ###   ########.fr       */
+/*   Created: 2024/02/11 16:40:12 by sebasnadu         #+#    #+#             */
+/*   Updated: 2024/02/11 19:10:35 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-char	**ft_matrixdup(char **mtx)
+void	ft_mtx_putfd(char **mtx, int fd, bool nl)
 {
-	int		i;
-	int		size;
-	char	**tmp;
+	size_t	i;
 
-	if (!mtx || !mtx[0])
-		return (NULL);
-	size = ft_matrixlen(mtx);
-	tmp = malloc((size + 1) * sizeof(char *));
-	if (!tmp)
-		return (NULL);
-	i = -1;
-	while (mtx[++i])
+	if (!mtx)
+		return ;
+	i = 0;
+	while (mtx[i])
 	{
-		tmp[i] = ft_strdup(mtx[i]);
-		if (!tmp[i])
-		{
-			ft_matrixfree(&tmp);
-			return (NULL);
-		}
+		if (nl)
+			ft_putendl_fd(mtx[i], fd);
+		else
+			ft_putstr_fd(mtx[i], fd);
+		++i;
 	}
-	tmp[i] = NULL;
-	return (tmp);
 }

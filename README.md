@@ -2,7 +2,6 @@
 	<img alt="libft" src="https://github.com/SebasNadu/42_libft/assets/98430438/dd0300ba-2982-4c91-a9d9-8df8488c99da">
 </picture>
 
-
 ## Description
 
 Libft is the first project at 42 School. It consist on recreate from scratch some of the standard functions of C, in order to create your own library. This library can be used in future projects at 42 School. This project is a great opportunity to improve your skills in C programming language and to understand the logic behind some of the standard functions of C. After finish this project, you can incorporate new functions to your library and use it in your future projects.
@@ -17,8 +16,6 @@ The bonus contains functions to work with linked lists. I added extra functions 
 ```bash
 git clone https://github.com/SebasNadu/42_libft.git
 ```
-
-#### Build the library.
 
 ```bash
 make -C 42_libft
@@ -80,6 +77,13 @@ Mandatory from `<ctype.h>` | Mandatory from `<string.h>` | Mandatory from `<stdl
 | | | | | | [ft_radix_sort](#ft_radix_sort)
 | | | | | | [ft_isprime](#ft_isprime)
 | | | | | | [ft_next_prime](#ft_next_prime)
+| | | | | | [ft_sqrt](#ft_sqrt)
+| | | | | | [ft_power](#ft_power)
+| | | | | | [ft_mtx_putfd](#ft_mtx_putfd)
+| | | | | | [ft_lsttomtx](#ft_lsttomtx)
+| | | | | | [ft_mtxtolist](#ft_mtxtolist)
+| | | | | | [ft_subsplit](#ft_subsplit)
+| | | | | | [ft_strjoin_var](#ft_strjoin_var)
 
 ## Content
 
@@ -762,6 +766,80 @@ int	ft_next_prime(size_t n);
 
     The function ft_next_prime returns the next prime number after the number n.
 
+### [ft_sqrt](/src/math/ft_sqrt.c)
+
+```c
+int	ft_sqrt(int nb);
+```
+
+    The ft_sqrt function computes the square root of a number using the Newton-Raphson method, an iterative
+    approach to approximating the square root of a number by repeatedly refining the estimate through a series
+    of calculations involving bitwise operations. It returns -1 if the input number is negative. The function
+    employs bitwise operations to efficiently reduce the search space for the square root while iteratively
+    refining the estimate until it reaches a satisfactory approximation.
+
+### [ft_power](/src/math/ft_power.c)
+
+```c
+int	ft_power(int nb, int power);
+```
+
+    The ft_power function calculates the result of raising a given number to a specified power using bitwise
+    operations. It handles cases where the power is negative or zero, returning 0 and 1 respectively. For
+    positive powers, it iteratively computes the result by exploiting binary exponentiation, effectively
+    reducing the number of multiplication operations needed to compute the final result. This function
+    efficiently performs exponentiation by decomposing the power into its binary representation and employing
+    bitwise operations to iteratively compute the result, making it suitable for calculating powers efficiently.
+
+### [ft_mtx_putfd](/src/mtx/ft_mtx_putfd.c)
+
+```c
+void	ft_mtx_putfd(t_mtx *mtx, int fd, bool nl);
+```
+
+    The function ft_mtx_putfd prints the matrix mtx to the file descriptor fd. If nl is true, it also
+    prints a newline character after the matrix is printed.
+
+### [ft_lsttomtx](/src/mtx/ft_lsttomtx.c)
+
+```c
+char	**ft_lsttomtx(t_list *lst);
+```
+
+    The function ft_lsttomtx creates a matrix from the list(lst). The function recives as parameter
+    the address of a pointer to the first link of a list. The function duplicates the content of the list, and
+    returns a pointer to the matrix.
+
+### [ft_lsttomtx](/src/mtx/ft_mtxtolst.c)
+
+```c
+t_list	*ft_mtxtolst(char **mtx);
+```
+
+    The function ft_mtxtolst creates a list from the matrix(mtx). The function recives as parameter
+    the address of a pointer to the first link of a matrix. The function duplicates the content of the matrix, and
+    returns a pointer to the list.
+
+### [ft_subsplit](/src/str/ft_subsplit.c)
+
+```c
+char	**ft_subsplit(char const *s, char *set);
+```
+
+    The function ft_subsplit splits the string s into substrings separated by the characters in set.
+    It returns a pointer to an array of substrings.
+
+### [ft_strjoin_var](/src/str/ft_strjoin_var.c)
+
+```c
+char	*ft_strjoin_var(char *first, ...);
+```
+
+    The function ft_strjoin_var concatenates the strings passed as arguments and returns a pointer to
+    a new string. The function takes a variable number of arguments, each of which must be a pointer
+    to a string, and the last argument must be NULL. if the last argument is NULL, the behavior is
+    undefined.
+
 ## Issues and improvements
 
 Feel free to open an issue if you find a bug on the project or if you have an idea for a new
@@ -769,3 +847,7 @@ function. If you have already found the solution to a bug, I would be very happy
 your pull request.
 
 If you like this project, feel free to star it 🌟 on GitHub. Thanks!
+
+```
+
+```

@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_matrixlen.c                                     :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 12:28:50 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/07 19:02:49 by sebasnadu        ###   ########.fr       */
+/*   Created: 2024/02/11 14:26:06 by sebasnadu         #+#    #+#             */
+/*   Updated: 2024/02/11 16:00:33 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
-
-int	ft_matrixlen(char **mtx)
+int	ft_sqrt(int nb)
 {
-	int	i;
+	int	root;
+	int	bit;
+	int	trial;
 
-	i = 0;
-	while (mtx && mtx[i])
-		i++;
-	return (i);
+	if (nb < 0)
+		return (-1);
+	bit = 1 << 30;
+	root = 0;
+	while (bit > nb)
+		bit >>= 2;
+	while (bit != 0)
+	{
+		trial = root + bit;
+		if (nb >= trial)
+		{
+			nb -= trial;
+			root = (root >> 1) + bit;
+		}
+		else
+			root >>= 1;
+		bit >>= 2;
+	}
+	return (root); 
 }
