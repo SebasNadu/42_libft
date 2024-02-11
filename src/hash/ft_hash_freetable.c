@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:24:27 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/10 21:54:30 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/11 13:06:26 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_hash_freetable(t_hashmap *table)
 		while (current != NULL)
 		{
 			tmp = current->next;
-			ft_hashmap_freeitem(current);
+			ft_hash_freeitem(current);
 			current = tmp;
 		}
 		++i;

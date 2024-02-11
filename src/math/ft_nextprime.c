@@ -6,9 +6,11 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 20:24:06 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/10 21:56:55 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/11 11:53:56 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../../include/libft.h"
 
 #include "../../include/libft.h"
 
