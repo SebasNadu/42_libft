@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_hash_freeitem.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 10:29:52 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/10 23:12:33 by sebasnadu        ###   ########.fr       */
+/*   Created: 2024/02/10 21:18:37 by sebasnadu         #+#    #+#             */
+/*   Updated: 2024/02/10 21:54:16 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_hash_freeitem(t_hash_item *item)
 {
-	size_t	len;
-	char	*str;
-
-	if (!s)
-		return (NULL);
-	len = ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * (i + 1));
-	if (!str)
-		return (NULL);
-	ft_memcpy(str, s, i + 1);
-	return (str);
+	if (!item)
+		return ;
+	free(item->key);
+	free(item->value);
+	free(item);
+	item = NULL;
 }

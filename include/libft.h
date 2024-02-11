@@ -6,7 +6,7 @@
 /*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 23:02:00 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/09 22:29:18 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/02/10 20:24:34 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,20 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct s_hash_item
+{
+	char				*key;
+	char				*value;
+	struct s_hash_item	*next;
+}	t_hash_item;
+
+typedef struct s_hashmap
+{
+	t_hash_item		**items;
+	size_t			size;
+	size_t			count;
+}	t_hashmap;
 
 typedef struct s_radix
 {
@@ -49,6 +63,10 @@ int		ft_isspace(int c);
 int		ft_isupper(int c);
 int		ft_islower(int c);
 int		ft_ispunct(int c);
+
+// Math
+bool	ft_isprime(size_t n);
+size_t	ft_next_prime(size_t n);
 
 // String
 char	**ft_split(char const *s, char c);

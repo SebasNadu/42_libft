@@ -77,6 +77,8 @@ Mandatory from `<ctype.h>` | Mandatory from `<string.h>` | Mandatory from `<stdl
 | | | | | | [ft_heap_sort](#ft_heap_sort)
 | | | | | | [ft_counting_sort](#ft_counting_sort)
 | | | | | | [ft_radix_sort](#ft_radix_sort)
+| | | | | | [ft_isprime](#ft_isprime)
+| | | | | | [ft_next_prime](#ft_next_prime)
 
 ## Content
 
@@ -741,6 +743,23 @@ void	ft_radix_sort(int *nbrs, int len, int base);
 |  O(nk)   |    O(nk)    |   O(nk)   |  O(n+k)   |
 
 <sub>TC: Time Complexity, SC: Space Complexity, n: max number of digits, k: base</sub>
+
+### [ft_isprime](/src/math/ft_isprime.c)
+
+```c
+int	ft_isprime(size_t n);
+```
+
+    The function ft_isprime checks if a number is prime or not. If the number is prime, it returns true(1),
+    otherwise it returns false(0).
+
+### [ft_next_prime](/src/math/ft_next_prime.c)
+
+```c
+int	ft_next_prime(size_t n);
+```
+
+    The function ft_next_prime returns the next prime number after the number n.
 
 ## Issues and improvements
 

@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_nextprime.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnavar <johnavar@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 10:29:52 by johnavar          #+#    #+#             */
-/*   Updated: 2024/02/10 23:12:33 by sebasnadu        ###   ########.fr       */
+/*   Created: 2024/02/10 20:24:06 by sebasnadu         #+#    #+#             */
+/*   Updated: 2024/02/10 21:56:55 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-char	*ft_strdup(const char *s)
+size_t	ft_nextprime(size_t n)
 {
-	size_t	len;
-	char	*str;
-
-	if (!s)
-		return (NULL);
-	len = ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * (i + 1));
-	if (!str)
-		return (NULL);
-	ft_memcpy(str, s, i + 1);
-	return (str);
+	if (n <= 1)
+		return (2);
+	if (n == 2)
+		return (3);
+	n += 2;
+	while (!ft_isprime(n))
+		n += 2;
+	return (n);
 }
