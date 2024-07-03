@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 22:38:33 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/02/05 18:03:34 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/07/03 16:58:27 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,10 @@ static char	*read_file(int fd, char *res)
 		if (byte_read == -1)
 		{
 			free(buffer);
-			return (NULL);
+			if (res)
+				free(res);
+			res = NULL;
+			return (res);
 		}
 		buffer[byte_read] = 0;
 		res = join_free(res, buffer);
