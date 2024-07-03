@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 22:38:33 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/07/03 16:58:27 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/07/03 18:24:43 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,12 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	{
+		if (buffer[fd])
+			free(buffer[fd]);
+		buffer[fd] = NULL;
 		return (NULL);
+	}
 	buffer[fd] = read_file(fd, buffer[fd]);
 	if (!buffer[fd])
 		return (NULL);
