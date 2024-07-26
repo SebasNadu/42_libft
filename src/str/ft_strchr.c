@@ -86,7 +86,7 @@ char	*ft_strchr(const char *s, int c)
 	if (s == NULL)
 		return (NULL);
 	ptr = (char *)s;
-	while ((uint64_t)ptr & sizeof(uint64_t) - 1)
+	while (((uint64_t)ptr & sizeof(uint64_t)) - 1)
 	{
 		if (*ptr == (char)c)
 			return (ptr);
